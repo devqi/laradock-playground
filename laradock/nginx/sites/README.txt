@@ -1,0 +1,1 @@
+If the app is brought to production, then change the file 'backup.gitconfig' to '.gitconfig' to hide the project related .conf files.
