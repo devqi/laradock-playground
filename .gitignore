@@ -11,10 +11,12 @@ app/storage/
 public/storage
 public/hot
 storage/*.key
-.env
 Homestead.yaml
 Homestead.json
 /.vagrant
+### This .env file usually contains some sensitive information.
+### When app will be brought to produciton, this file should be included.
+# .env  
 
 # Intellij 
 .idea
