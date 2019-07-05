@@ -1,0 +1,36 @@
+/vendor/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Laravel 4 specific
+bootstrap/compiled.php
+app/storage/
+
+# Laravel 5 & Lumen specific
+public/storage
+public/hot
+storage/*.key
+.env
+Homestead.yaml
+Homestead.json
+/.vagrant
+
+# Intellij 
+.idea
+/logs
+/data
+/.project
+.docker-sync
+
+# nginx settings
+/nginx/ssl/*.crt
+/nginx/ssl/*.key
+/nginx/ssl/*.csr
+
+# macOS files
+.DS_Store
+.metadata/*
+
+# vscode related settings
+.vscode/*
