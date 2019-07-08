@@ -41,7 +41,9 @@ ENV TZ=UTC
 ENV DEBUG=false
 ENV JAVA_OPTS="-Xmx768m -XX:MaxMetaspaceSize=256m"
 
-EXPOSE 8080 8000
+### original setup is:
+### EXPOSE 8080 8000
+EXPOSE 9802 8000
 
 RUN apk add --no-cache \
         bash \
