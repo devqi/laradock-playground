@@ -4,27 +4,24 @@ class PagesController
 {
     public function home()
     {
-        $tasks = App::get('database')->selectAll('todos');
-
-        $users = App::get('database')->selectAll('users');
-
-        require 'views/index.view.php';
+        // $tasks = App::get('database')->selectAll('todos');
+        return view('index');
     }
 
     public function about()
     {
-        require 'views/about.view.php';
+        return view('about');
     }
 
     public function aboutCulture()
     {
         $name = 'Laracasts';
 
-        require 'views/about-culture.view.php';
+        return view('about-culture');
     }
 
     public function contact()
     {
-        require 'views/contact.view.php';
+        return view('contact');
     }
 }
