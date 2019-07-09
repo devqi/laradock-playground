@@ -7,6 +7,8 @@
     <title>@yield('title')</title>
 </head>
 <body>
+    <h3><a href="/projects">Go Home</a></h3>
+    <h3><a href="/projects/create">Create Project</a></h3>
     @yield('content')
 </body>
 </html>
