@@ -19,7 +19,15 @@ class ProjectsController extends Controller
 
     public function store()
     {
-        \App\Project::create(request(['title', 'description' ]));
+        /**
+         * server-side validation
+         */
+        $attributes = request()->validate([
+            'title' => ['required', 'min:3'],
+            'description' => ['required', 'min:10', 'max:255']
+        ]);
+
+        \App\Project::create($attributes);
 
         return redirect('/projects');
     }
