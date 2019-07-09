@@ -20,9 +20,38 @@ class ProjectsController extends Controller
     public function store()
     {
         $project = new \App\Project;
-        $project->title = Request('title');
-        $project->description = Request('description');
+        $project->title = request('title');
+        $project->description = request('description');
         $project->save();
+
+        return redirect('/projects');
+    }
+
+    public function show()
+    {
+
+    }
+
+    public function update($id)
+    {
+        $project = \App\Project::findOrFail($id);
+        $project->title = request('title');
+        $project->description = request('description');
+        $project->save();
+
+        return redirect('/projects');
+    }
+
+    public function edit($id)
+    {
+        $project = \App\Project::findOrFail($id);
+        
+        return view('projects.edit', compact('project'));
+    }
+
+    public function destroy($id)
+    {
+        \App\Project::findOrFail($id)->delete();
 
         return redirect('/projects');
     }
