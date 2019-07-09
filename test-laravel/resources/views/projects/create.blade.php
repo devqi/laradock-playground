@@ -6,13 +6,7 @@
 <form action="/projects" method="post">
     {{ csrf_field() }}
 
-    @if ($errors->any())
-    <div>
-        @foreach ($errors->all() as $error)
-        <p>{{ $error }}</p>
-        @endforeach
-    </div>
-    @endif
+   @include('projects.error')
 
     <div>
         <input type="text" name="title" placeholder="Project title ... " value="{{ old('title') }}" required>
