@@ -14,10 +14,14 @@ class CreateProjectsTable extends Migration
     public function up()
     {
         Schema::create('projects', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->unsignedInteger('owner_id');
             $table->string('title');
             $table->text('description');
             $table->timestamps();
+            // The foreign key 'owner_id' references the 'id' in the 'users' table.
+            // Once the referenced user is deleted, then all of his/her projects will also be deleted (cascade down). 
+            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

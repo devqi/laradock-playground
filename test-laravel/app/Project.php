@@ -13,8 +13,11 @@ class Project extends Model
      */
     protected $fillable = [
         'title',
-        'description'
+        'description',
+        'owner_id'
     ];
+    // alternatively, we can also use 
+    // protected $guarded = [  ];
 
     public function tasks()
     {

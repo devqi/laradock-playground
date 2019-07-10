@@ -76,11 +76,10 @@ class ProjectTasksController extends Controller
      * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Task $task)
+    public function update(Task $task)
     {
-        $task->update([
-            'completed' => $request->has('completed')
-        ]);
+        $task->complete(request()->has('completed'));
+       
         return back();
     }
 
